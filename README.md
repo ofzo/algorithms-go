@@ -1,17 +1,14 @@
 # algorithms
 
 ### sort
-O(n^2)
+#### O(n^2)
 
-Buddle sort
+- Buddle sort
+- Selection sort
+- Insert sort
 
-Selection sort
+#### O(nlogn)
 
-Insert sort
-
-O(nlogn)
-
-Merge sort
-
-Quick sort
+- Merge sort
+- Quick sort
 
