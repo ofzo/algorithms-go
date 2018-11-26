@@ -5,18 +5,31 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/logrusorgru/aurora"
 	"github.com/roadhub/algorithms/array"
 	"github.com/roadhub/algorithms/sort"
 )
 
-func nearby(a array.Array, l int) {
+var (
+	splitLine = aurora.Red("-------------------------------------------------------------------------------------")
+)
+
+func nearby(l int) {
+	a := array.Array{}
 	a.NearBy(l, 10)
-	fmt.Println("\na.Nearby")
+	fmt.Println(aurora.Green("a.Nearby, a array include some(~10) unorder int data:"))
 	call(a)
 }
-func _init(a array.Array, l int) {
+func _init(l int) {
+	a := array.Array{}
 	a.Init(l, 0, 10000000)
-	fmt.Println("a.Init")
+	fmt.Println(aurora.Green("a.Init, a array include full random int data:"))
+	call(a)
+}
+func equal(l int) {
+	a := array.Array{}
+	a.Init(l, 0, 10)
+	fmt.Println(aurora.Green("a.Init, a array include large equal int data:"))
 	call(a)
 }
 func call(a array.Array) {
@@ -33,12 +46,21 @@ func call(a array.Array) {
 	array.Call(sort.Heap, a6)
 }
 func main() {
-	a := array.Array{}
-	l := 10
+
+	// a := array.Array{}
+	// a.Init(100000, -1000, 10000000000)
+	// array.Call(sort.Quick, a)
+
+	l := 100
 	if len(os.Args) > 1 {
 		l, _ = strconv.Atoi(os.Args[1])
 	}
+	fmt.Printf("\na.Length = %d\n", aurora.Red(l))
+	fmt.Println(splitLine)
 	// a.Init(l, 0, 100)
-	_init(a, l)
-	nearby(a, l)
+	_init(l)
+	fmt.Println(splitLine)
+	nearby(l)
+	fmt.Println(splitLine)
+	equal(l)
 }

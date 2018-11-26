@@ -48,7 +48,7 @@ func Call(sort func(*Array), a Array) {
 			return
 		}
 	}
-	fmt.Printf("%64s: %16f ms\n", name, (endTime-startTime)/1000/1000)
+	fmt.Printf("%48s: %16f ms\n", name, (endTime-startTime)/1000/1000)
 }
 
 //NearBy create nearby array

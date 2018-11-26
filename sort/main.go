@@ -4,7 +4,7 @@ import (
 	"github.com/roadhub/algorithms/array"
 )
 
-//Selection selection sort
+//Selection section sort
 func Selection(a *array.Array) {
 	for index := 0; index < a.Length; index++ {
 		minIndex := index
@@ -37,7 +37,7 @@ func insert(a *array.Array, l, r int) {
 	for index := l; index <= r; index++ {
 		e := a.Values[index]
 		var j int
-		for j = index; j > 0 && e < a.Values[j-1]; j-- {
+		for j = index; j > l && e < a.Values[j-1]; j-- {
 			a.Values[j] = a.Values[j-1]
 		}
 		a.Values[j] = e

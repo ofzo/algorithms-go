@@ -1,0 +1,19 @@
+language: go
+go:
+  -"1.8"
+  -"1.9"
+  -"1.10"
+  -"1.11"
+os: osx
+
+env:
+  GO11MODULE=on
+
+before_install:
+  - go mod download github.com/logrusorgru/aurora
+
+install:
+  - go mod vendor
+
+script:
+  go test ./test

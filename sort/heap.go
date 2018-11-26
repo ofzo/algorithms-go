@@ -42,6 +42,7 @@ func (h *heap) shiftUp(index int) {
 		index = t
 	}
 }
+
 func (h *heap) shiftDown(index int) {
 	for 2*index+1 < h.length {
 		t := 2*index + 1
