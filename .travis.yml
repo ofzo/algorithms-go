@@ -7,9 +7,11 @@ env:
   GO11MODULE=on
 
 before_install:
-  - go mod download github.com/logrusorgru/aurora
+  -/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  -brew install go 
 
 install:
+  -go mod download github.com/logrusorgru/aurora
   - go mod vendor
 
 script:
