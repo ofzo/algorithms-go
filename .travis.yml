@@ -3,14 +3,12 @@ go:
   -"1.11"
 os: osx
 
-env:
-  GO11MODULE=on
-
 before_install:
   - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   - brew upgrade go 
 
 install:
+  - GO111MODULE=on
   - go mod download github.com/logrusorgru/aurora
   - go mod vendor
 
