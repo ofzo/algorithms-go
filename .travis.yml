@@ -8,7 +8,7 @@ env:
 
 before_install:
   - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  - brew install go 
+  - brew upgrade go 
 
 install:
   - go mod download github.com/logrusorgru/aurora
