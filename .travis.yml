@@ -9,7 +9,7 @@ before_install:
 
 install:
   - GO111MODULE=on
-  - go mod download github.com/logrusorgru/aurora
+  - go mod download
   - go mod vendor
 
 script:
