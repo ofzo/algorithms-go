@@ -10,8 +10,6 @@ jobs:
     environment: GO111MODULE=on
     steps:
       - checkout
-      - run: pwd && ls
-      - run: GO111MODULE=on
-      - run: GO111MODULE=on && go mod download
-      - run: GO111MODULE=on && go mod vendor
+      - run: go mod download
+      - run: go mod vendor
       - run: go test -v ./...
