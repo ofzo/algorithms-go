@@ -5,6 +5,8 @@ os: osx
 
 env: GO111MODULE=on
 
+
+
 before_install:
 # - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   - brew upgrade go 
@@ -13,5 +15,11 @@ before_install:
 
 install: true
 
-script:
-  go test -v ./...
+jobs:
+  include:
+    - stage: test
+    script: go test -v ./...
+    script: echo "yes test passed"
+    
+    - stage: deploy
+    script: go test -v ./...
