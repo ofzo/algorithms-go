@@ -1,9 +1,7 @@
-package test
+package sort
 
 import (
 	"testing"
-
-	"github.com/roadhub/algorithms/sort"
 
 	"github.com/roadhub/algorithms/array"
 )
@@ -11,8 +9,8 @@ import (
 //TestSelection test Selection
 func TestSelection(t *testing.T) {
 	a := array.Array{}
-	a.Init(100000, 0, 100000)
-	array.Call(sort.Selection, a)
+	a.Init(10000, 0, 10000)
+	array.Call(Selection, a)
 	for index := 0; index < a.Length-1; index++ {
 		if a.Values[index] > a.Values[index+1] {
 			t.Errorf("error: a.Values[%d] not greater than a.Values[%d]", index, index+1)
@@ -23,8 +21,8 @@ func TestSelection(t *testing.T) {
 //TestBubble test bubble
 func TestBubble(t *testing.T) {
 	a := array.Array{}
-	a.Init(100000, 0, 100000)
-	array.Call(sort.Bubble, a)
+	a.Init(10000, 0, 10000)
+	array.Call(Bubble, a)
 	for index := 0; index < a.Length-1; index++ {
 		if a.Values[index] > a.Values[index+1] {
 			t.Errorf("error: a.Values[%d] not greater than a.Values[%d]", index, index+1)
@@ -35,8 +33,8 @@ func TestBubble(t *testing.T) {
 //TestInsert test insert
 func TestInsert(t *testing.T) {
 	a := array.Array{}
-	a.Init(100000, 0, 100000)
-	array.Call(sort.Insert, a)
+	a.Init(10000, 0, 10000)
+	array.Call(Insert, a)
 	for index := 0; index < a.Length-1; index++ {
 		if a.Values[index] > a.Values[index+1] {
 			t.Errorf("error: a.Values[%d] not greater than a.Values[%d]", index, index+1)
@@ -46,8 +44,8 @@ func TestInsert(t *testing.T) {
 
 func TestQuick(t *testing.T) {
 	a := array.Array{}
-	a.Init(100000, 0, 100000)
-	array.Call(sort.Quick, a)
+	a.Init(10000, 0, 10000)
+	array.Call(Quick, a)
 	for index := 0; index < a.Length-1; index++ {
 		if a.Values[index] > a.Values[index+1] {
 			t.Errorf("error: a.Values[%d] not greater than a.Values[%d]", index, index+1)
@@ -58,8 +56,8 @@ func TestQuick(t *testing.T) {
 //TestHeap test heap
 func TestHeap(t *testing.T) {
 	a := array.Array{}
-	a.Init(100000, 0, 100000)
-	array.Call(sort.Heap, a)
+	a.Init(10000, 0, 10000)
+	array.Call(Heap, a)
 	for index := 0; index < a.Length-1; index++ {
 		if a.Values[index] > a.Values[index+1] {
 			t.Errorf("error: a.Values[%d] not greater than a.Values[%d]", index, index+1)
@@ -70,8 +68,8 @@ func TestHeap(t *testing.T) {
 //TestHeap test heap
 func TestMerge(t *testing.T) {
 	a := array.Array{}
-	a.Init(100000, 0, 100000)
-	array.Call(sort.Merge, a)
+	a.Init(10000, 0, 10000)
+	array.Call(Merge, a)
 	for index := 0; index < a.Length-1; index++ {
 		if a.Values[index] > a.Values[index+1] {
 			t.Errorf("error: a.Values[%d] not greater than a.Values[%d]", index, index+1)
