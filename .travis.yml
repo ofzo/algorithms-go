@@ -3,15 +3,18 @@ go:
   -"1.11"
 os: osx
 
+service: 
+  - docker
+  
 env: GO111MODULE=on
 
 before_install:
-# - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  - brew upgrade go 
+  - docker pull golang
+  - docker run golang
   - GO111MODULE=on && go mod download
   - GO111MODULE=on && go mod vendor
 
 install: true
 
-script:
-  go test -v ./...
+script: go test -v ./...
+
