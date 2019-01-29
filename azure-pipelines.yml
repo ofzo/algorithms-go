@@ -11,5 +11,5 @@ pool:
 
 steps:
 - script: |
-    go test
+    go test -v ./...
   displayName: 'Run a multi-line script'
